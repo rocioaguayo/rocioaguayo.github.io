@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#d3dbe8">
   <title>Rocío Aguayo Vargas · Portafolio</title>
   <meta name="description" content="Analista de datos. Automatización, control operativo y herramientas que ordenan la información para decidir mejor.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,34 +12,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --fondo: #f7f4d3;
-      --superficie: #fffdf2;
-      --tinta: #3b2a25;
-      --tinta-2: #6b5a50;
-      --tinta-3: #998a7c;
-      --linea: #e5dfbd;
-      --acento: #a44b3f;
-      --acento-suave: #f8e3d8;
-      --rosa: #fbdccd;
-      --rosa-tinta: #a44b3f;
-      --tierra: #a44b3f;
-      --lima: #d5e09c;
-      --lima-tinta: #4a5226;
-      --rosa-fondo: #cbdfbc;
+      --fondo: #fdf3ee;
+      --superficie: #fffaf7;
+      --tinta: #3f3236;
+      --tinta-2: #6e5d63;
+      --tinta-3: #9c8a90;
+      --linea: #efdcd4;
+      --acento: #a9614f;
+      --acento-suave: #fde6dc;
+      --rosa: #ffd9c4;
+      --rosa-tinta: #8a4a3c;
+      --tierra: #7d6870;
+      --lima: #d3dbe8;
+      --lima-tinta: #3f4a63;
+      --rosa-fondo: #d3dbe8;
       --pendiente: #fff4cc;
       --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
       --serif: "Source Serif 4", Georgia, serif;
     }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --fondo: #1f1a17; --superficie: #2a231f; --tinta: #f7f4d3; --tinta-2: #d2cba9; --tinta-3: #9e9679;
-        --linea: #3d342d; --acento: #f09c78; --acento-suave: #3a2a24; --rosa: #4a2f28; --rosa-tinta: #f09c78; --tierra: #f09c78; --lima: #3a4027; --lima-tinta: #d5e09c; --rosa-fondo: #2b3326; --pendiente: #4a3f12;
-      }
-    }
-    :root[data-theme="dark"] {
-      --fondo: #1f1a17; --superficie: #2a231f; --tinta: #f7f4d3; --tinta-2: #d2cba9; --tinta-3: #9e9679;
-        --linea: #3d342d; --acento: #f09c78; --acento-suave: #3a2a24; --rosa: #4a2f28; --rosa-tinta: #f09c78; --tierra: #f09c78; --lima: #3a4027; --lima-tinta: #d5e09c; --rosa-fondo: #2b3326; --pendiente: #4a3f12;
-    }
+    :root { color-scheme: light; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { margin: 0; background: var(--fondo); color: var(--tinta); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -52,7 +45,7 @@
     nav a.item:hover { color: var(--tinta); }
 
     /* Presentación */
-    .hero { padding: 88px 0 56px; background: linear-gradient(180deg, var(--rosa-fondo) 0%, var(--fondo) 100%); }
+    .hero { padding: 88px 0 56px; background: linear-gradient(180deg, #d3dbe8 0%, #fbdccc 55%, var(--fondo) 100%); }
     .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tierra); margin: 0 0 16px; }
     h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(36px, 5vw, 54px); line-height: 1.1; letter-spacing: -.01em; margin: 0 0 20px; max-width: 760px; }
     .bajada { font-style: italic; font-size: 19px; color: var(--tinta-2); max-width: 680px; margin: 0; }
@@ -243,12 +236,12 @@
         </div>
         <div class="demo">
           <div>
-            <p class="resumen">Presupuesto familiar desde el celular: cuánto queda este mes y en qué se está gastando.</p>
+            <p class="resumen">Control de presupuesto familiar: cuánto queda este mes, en qué se gasta y cuándo se cumplen las metas.</p>
             <ul class="puntos">
-              <li>Registro de gastos, ingresos y ahorro en segundos</li>
-              <li>Saldo y margen semanal del mes</li>
-              <li>Alerta al llegar al 90% del presupuesto</li>
-              <li>PIN cifrado y sesiones que expiran</li>
+              <li>Presupuesto por categoría con alertas</li>
+              <li>Velocímetro y gráfico de torta, fáciles de leer</li>
+              <li>Metas de ahorro con fecha estimada de logro</li>
+              <li>Descarga a Excel y edición de movimientos</li>
             </ul>
             <p class="chips"><span>Apps Script</span><span>Google Sheets</span><span>JavaScript</span></p>
             <div class="acciones">
