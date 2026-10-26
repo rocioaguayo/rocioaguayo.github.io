@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocío Aguayo · Portafolio</title>
+  <meta name="description" content="Directora de empresas. Datos y desarrollo de herramientas que resuelven problemas concretos de operación.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fondo: #faf9f7;
+      --superficie: #ffffff;
+      --tinta: #1c1f23;
+      --tinta-2: #5b6168;
+      --tinta-3: #8a9097;
+      --linea: #e6e3de;
+      --acento: #0f5f6e;
+      --acento-suave: #e6f0f1;
+      --pendiente: #fff4cc;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --serif: "Source Serif 4", Georgia, serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --fondo: #121417; --superficie: #1a1d21; --tinta: #eceae6; --tinta-2: #a8aeb5; --tinta-3: #7d838a;
+        --linea: #2b2f35; --acento: #6cc3cf; --acento-suave: #1d3237; --pendiente: #4a3f12;
+      }
+    }
+    :root[data-theme="dark"] {
+      --fondo: #121417; --superficie: #1a1d21; --tinta: #eceae6; --tinta-2: #a8aeb5; --tinta-3: #7d838a;
+      --linea: #2b2f35; --acento: #6cc3cf; --acento-suave: #1d3237; --pendiente: #4a3f12;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--fondo); color: var(--tinta); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--acento); text-underline-offset: 3px; }
+    .envoltura { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navegación */
+    nav { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--fondo) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linea); }
+    nav .envoltura { display: flex; align-items: center; gap: 24px; height: 56px; }
+    nav .nombre { font-family: var(--serif); font-weight: 600; font-size: 17px; margin-right: auto; color: var(--tinta); text-decoration: none; }
+    nav a.item { color: var(--tinta-2); text-decoration: none; font-size: 14px; font-weight: 500; }
+    nav a.item:hover { color: var(--tinta); }
+
+    /* Presentación */
+    .hero { padding: 88px 0 56px; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--acento); margin: 0 0 16px; }
+    h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(36px, 5vw, 54px); line-height: 1.1; letter-spacing: -.01em; margin: 0 0 20px; max-width: 760px; }
+    .bajada { font-size: 19px; color: var(--tinta-2); max-width: 680px; margin: 0; }
+
+    .trayectoria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+    .trayectoria div { padding: 20px 24px 20px 0; }
+    .trayectoria div + div { padding-left: 24px; border-left: 1px solid var(--linea); }
+    .trayectoria span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-3); }
+    .trayectoria b { display: block; font-size: 16px; font-weight: 600; margin-top: 4px; }
+
+    /* Secciones */
+    section { padding: 56px 0; }
+    .cab-seccion { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+    h2 { font-family: var(--serif); font-weight: 600; font-size: 30px; margin: 0; }
+    .cab-seccion p { margin: 0; color: var(--tinta-2); font-size: 15px; }
+
+    /* Método */
+    .metodo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: paso; }
+    .paso { background: var(--superficie); border: 1px solid var(--linea); border-radius: 12px; padding: 20px; }
+    .paso::before { counter-increment: paso; content: "0" counter(paso); display: block; font-size: 12px; font-weight: 700; color: var(--acento); letter-spacing: .06em; margin-bottom: 8px; }
+    .paso b { display: block; font-size: 16px; margin-bottom: 4px; }
+    .paso p { margin: 0; font-size: 14px; color: var(--tinta-2); }
+
+    /* Proyectos */
+    .proyecto { background: var(--superficie); border: 1px solid var(--linea); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+    .proyecto-cab { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+    .proyecto h3 { font-family: var(--serif); font-weight: 600; font-size: 26px; margin: 0; }
+    .etiqueta { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--acento-suave); color: var(--acento); }
+    .resumen { font-size: 17px; color: var(--tinta-2); margin: 0 0 24px; max-width: 720px; }
+
+    .ficha { display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+    dl.meta { margin: 0; font-size: 14px; }
+    dl.meta dt { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-3); margin-top: 14px; }
+    dl.meta dt:first-child { margin-top: 0; }
+    dl.meta dd { margin: 2px 0 0; }
+    .tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tres h4 { margin: 0 0 6px; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--acento); }
+    .tres p, .tres ul { margin: 0; font-size: 15px; }
+    .tres ul { padding-left: 18px; }
+    .tres li + li { margin-top: 4px; }
+
+    .figura { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--linea); }
+    .figura-titulo { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-3); margin: 0 0 14px; }
+    .flujo { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+    .flujo div { position: relative; padding: 14px 12px; background: var(--fondo); border: 1px solid var(--linea); font-size: 14px; }
+    .flujo div:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 50%; transform: translateY(-50%); background: var(--superficie); color: var(--acento); font-weight: 700; z-index: 1; line-height: 1; }
+    .flujo div:first-child { border-radius: 10px 0 0 10px; }
+    .flujo div:last-child { border-radius: 0 10px 10px 0; }
+    .flujo div + div { border-left: 0; }
+    .flujo b { display: block; font-size: 14px; }
+    .flujo span { color: var(--tinta-2); font-size: 13px; }
+
+    .demo { display: grid; grid-template-columns: 1fr 340px; gap: 32px; align-items: start; }
+    .marco { border: 1px solid var(--linea); border-radius: 28px; padding: 10px; background: var(--fondo); }
+    .marco iframe { display: block; width: 100%; height: 600px; border: 0; border-radius: 20px; background: #fcf6f1; }
+    .demo-texto p { margin: 0 0 12px; font-size: 15px; }
+    .acciones { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .boton { display: inline-block; padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid var(--acento); color: var(--acento); }
+    .boton.lleno { background: var(--acento); color: var(--superficie); }
+
+    dl.meta.en-fila { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 16px; }
+    dl.meta.en-fila dt { margin-top: 0; }
+    .proyecto.chico { padding: 24px 32px; }
+    .proyecto.chico .tres { margin-top: 8px; }
+
+    .nota-demo { margin: 10px 0 0; font-size: 13px; color: var(--tinta-2); }
+    .pendiente { background: var(--pendiente); border-radius: 4px; padding: 0 4px; }
+
+    /* Contacto */
+    .contacto { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--linea); padding: 40px 0 64px; }
+    .contacto p { margin: 0; color: var(--tinta-2); }
+    .contacto .enlaces { display: flex; gap: 20px; font-weight: 600; font-size: 15px; }
+
+    @media (max-width: 860px) {
+      .ficha, .demo { grid-template-columns: 1fr; gap: 24px; }
+      .tres { grid-template-columns: 1fr; gap: 18px; }
+      .metodo { grid-template-columns: 1fr 1fr; }
+      .flujo { grid-template-columns: 1fr; }
+      .flujo div, .flujo div + div { border: 1px solid var(--linea); border-top: 0; border-radius: 0; }
+      .flujo div:first-child { border-top: 1px solid var(--linea); border-radius: 10px 10px 0 0; }
+      .flujo div:last-child { border-radius: 0 0 10px 10px; }
+      .flujo div:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -9px; transform: translateX(-50%); }
+      dl.meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+      dl.meta dt:nth-of-type(2) { margin-top: 0; }
+    }
+    @media (max-width: 560px) {
+      .envoltura { padding: 0 16px; }
+      nav a.item { display: none; }
+      .hero { padding: 56px 0 40px; }
+      .bajada { font-size: 17px; }
+      .trayectoria { grid-template-columns: 1fr; }
+      .trayectoria div, .trayectoria div + div { padding: 14px 0; border-left: 0; }
+      .trayectoria div + div { border-top: 1px solid var(--linea); }
+      .metodo { grid-template-columns: 1fr; }
+      .proyecto, .proyecto.chico { padding: 22px 18px; }
+      .marco iframe { height: 560px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="envoltura">
+    <a class="nombre" href="#">Rocío Aguayo</a>
+    <a class="item" href="#proyectos">Proyectos</a>
+    <a class="item" href="#metodo">Cómo trabajo</a>
+    <a class="item" href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="envoltura">
+    <p class="eyebrow">Directora de empresas · Datos · Desarrollo</p>
+    <h1>Convierto problemas de operación en herramientas simples, medibles y seguras.</h1>
+    <p class="bajada">Soy directora de empresas en Chile. Antes fui académica y Data Scientist en Silicon Valley. Aquí muestro proyectos que diseñé y construí de punta a punta, desde la pregunta de negocio hasta la herramienta en manos de quien la usa.</p>
+
+    <div class="trayectoria">
+      <div><span>Hoy</span><b>Directora de empresas, Chile</b></div>
+      <div><span>Antes</span><b>Data Scientist, Silicon Valley</b></div>
+      <div><span>Formación</span><b>Académica e investigadora</b></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="proyectos">
+    <div class="envoltura">
+      <div class="cab-seccion">
+        <h2>Proyectos</h2>
+        <p>Del más grande al más simple.</p>
+      </div>
+
+      <!-- APP LEEN -->
+      <article class="proyecto">
+        <div class="proyecto-cab">
+          <h3>App Leen</h3>
+          <span class="etiqueta">En uso · Demo disponible</span>
+        </div>
+        <p class="resumen">Aplicación de reparto para una empresa de transporte. Reúne en el celular del repartidor la ruta, la lectura de códigos, la foto de entrega y el contacto con el cliente.</p>
+
+        <div class="ficha">
+          <dl class="meta">
+            <dt>Cliente</dt><dd>Empresa de transporte y reparto</dd>
+            <dt>Año</dt><dd>2026</dd>
+            <dt>Rol</dt><dd>Diseño, desarrollo y puesta en marcha</dd>
+            <dt>Tecnología</dt><dd>Android (Java), aplicación web, GitHub Pages</dd>
+          </dl>
+          <div class="tres">
+            <div>
+              <h4>Problema</h4>
+              <p>La información de cada entrega estaba repartida entre llamadas, mensajes y planillas. No había respaldo de qué se entregó, cuándo ni dónde.</p>
+            </div>
+            <div>
+              <h4>Solución</h4>
+              <ul>
+                <li>Seguimiento GPS y mapa de ruta</li>
+                <li>Lectura de códigos y etiquetas con la cámara</li>
+                <li>Foto de entrega como comprobante</li>
+                <li>Funciona sin señal</li>
+                <li>Entrada con huella o PIN</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Resultado</h4>
+              <p>En uso diario por el equipo de reparto. Cada entrega queda registrada con foto, hora y ubicación. Bajaron las llamadas de coordinación y los reclamos por entregas sin confirmar, y las rutas toman menos tiempo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="figura">
+          <p class="figura-titulo">Flujo de una entrega</p>
+          <div class="flujo">
+            <div><b>Pedido</b><span>Asignado al repartidor</span></div>
+            <div><b>Ruta</b><span>GPS y mapa en vivo</span></div>
+            <div><b>Escaneo</b><span>Código o etiqueta</span></div>
+            <div><b>Entrega</b><span>Foto como respaldo</span></div>
+            <div><b>Aviso</b><span>WhatsApp al cliente</span></div>
+          </div>
+        </div>
+
+        <div class="acciones">
+          <a class="boton lleno" href="https://rocioaguayo.github.io/app-leen-demo/" target="_blank" rel="noopener">Probar la demo</a>
+          <a class="boton" href="https://github.com/rocioaguayo/app-leen-demo">Código de la demo</a>
+          <a class="boton" href="https://github.com/rocioaguayo/app-leen-android">App Android</a>
+        </div>
+        <p class="nota-demo">Tres perfiles de prueba (administrador, repartidor y cliente) con datos ficticios. Las credenciales están en la portada de la demo.</p>
+      </article>
+
+      <!-- AHORA SÍ -->
+      <article class="proyecto">
+        <div class="proyecto-cab">
+          <h3>Ahora Sí</h3>
+          <span class="etiqueta">Proyecto personal · Demo disponible</span>
+        </div>
+        <p class="resumen">Control del presupuesto familiar desde el celular. Responde una sola pregunta: ¿cuánto me queda este mes y en qué se me está yendo?</p>
+
+        <div class="demo">
+          <div>
+            <div class="ficha" style="grid-template-columns:1fr;gap:24px">
+              <div class="tres">
+                <div>
+                  <h4>Problema</h4>
+                  <p>Las planillas de gastos son incómodas en el celular y no avisan a tiempo cuándo se está gastando de más.</p>
+                </div>
+                <div>
+                  <h4>Solución</h4>
+                  <ul>
+                    <li>Registro en segundos</li>
+                    <li>Saldo y margen semanal del mes</li>
+                    <li>Alerta al 90% del presupuesto</li>
+                    <li>Gasto por categoría y metas de ahorro</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Seguridad</h4>
+                  <ul>
+                    <li>PIN cifrado con sal</li>
+                    <li>Sesiones que expiran</li>
+                    <li>Bloqueo tras 5 intentos fallidos</li>
+                    <li>Sin datos sensibles en el código</li>
+                  </ul>
+                </div>
+              </div>
+              <dl class="meta en-fila">
+                <dt>Año</dt><dt>Tecnología</dt><dt>Datos</dt>
+                <dd>2026</dd><dd>Apps Script, JavaScript</dd><dd>Google Sheets</dd>
+              </dl>
+            </div>
+            <div class="acciones">
+              <a class="boton lleno" href="demos/ahora-si/" target="_blank" rel="noopener">Abrir demo</a>
+              <a class="boton" href="https://github.com/rocioaguayo/ahora-si">Ver código</a>
+            </div>
+          </div>
+          <div class="marco" aria-label="Demo de Ahora Sí">
+            <iframe src="demos/ahora-si/" title="Demo de Ahora Sí con datos ficticios" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- PELUQUERÍA -->
+      <article class="proyecto chico">
+        <div class="proyecto-cab">
+          <h3>Gestión para peluquería</h3>
+          <span class="etiqueta">Pyme · Versión inicial</span>
+        </div>
+        <div class="tres">
+          <div>
+            <h4>Problema</h4>
+            <p>Una peluquería llevaba por separado las citas, los datos de sus clientes y los horarios del equipo.</p>
+          </div>
+          <div>
+            <h4>Solución</h4>
+            <ul><li>Agenda de citas</li><li>Registro de clientes (CRM)</li><li>Control de horarios del equipo</li></ul>
+          </div>
+          <div>
+            <h4>Resultado</h4>
+            <p>Citas, clientes y asistencia en un solo lugar. Es la base para sumar recordatorios y reportes.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="envoltura">
+      <div class="cab-seccion">
+        <h2>Cómo trabajo</h2>
+        <p>El mismo orden en cada proyecto.</p>
+      </div>
+      <div class="metodo">
+        <div class="paso"><b>Entender la decisión</b><p>Qué necesita decidir o resolver quien va a usar la herramienta.</p></div>
+        <div class="paso"><b>Ordenar los datos</b><p>Qué información existe, dónde está y qué falta registrar.</p></div>
+        <div class="paso"><b>Construir lo mínimo</b><p>Una herramienta simple que se use desde el primer día.</p></div>
+        <div class="paso"><b>Medir y ajustar</b><p>Revisar el uso real y mejorar según los resultados.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="envoltura">
+  <div class="contacto" id="contacto">
+    <p>¿Conversamos? Respondo personalmente.</p>
+    <div class="enlaces">
+      <a href="https://github.com/rocioaguayo">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
